@@ -1,0 +1,96 @@
+CONTEXTO DEL PROYECTO:
+
+Estás trabajando en el proyecto visual y narrativo “Econochangos”.
+Cada línea del guion representa una escena ilustrada independiente.
+Las ilustraciones deben ser coherentes entre sí y respetar estrictamente
+la identidad visual definida abajo.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+DEFINICIÓN DE ESTILO (NO MODIFICAR):
+
+Estilo Econochangos v1 – Chango corpulento:
+
+- Chango naranja estilo Econochangos
+- Ilustración cartoon minimalista, plana
+- Pensada para miniaturas y gráficos explicativos
+- Muy legible a tamaños pequeños
+- Sin realismo, sin texturas complejas
+
+Proporciones corporales obligatorias:
+- Cuerpo alto y corpulento
+- Tronco grande y dominante
+- Brazos largos y gruesos
+- Piernas cortas y robustas
+- Cabeza integrada al cuerpo, casi sin cuello
+
+Rostro:
+- Cara extremadamente simple
+- Forma ovalada
+- Color piel rosada / salmón
+- Dos puntos negros como ojos
+- Una curva negra como sonrisa
+- Sin nariz definida
+- Sin cejas
+- Sin blancos en los ojos
+
+Sensación general:
+- Peso y masa corporal
+- Silueta fuerte, estable, no pequeña
+- Apariencia amigable pero sólida
+- No infantil
+
+Colores:
+- Cuerpo: naranja sólido, saturado y uniforme
+- Cara: rosado claro / salmón
+- Contornos: negro puro
+- Sin degradados
+
+PROHIBIDO (estricto):
+- Chango pequeño
+- Proporciones infantiles
+- Cabeza grande tipo mascota
+- Estilo bebé o chibi
+- Cuerpo delgado
+- Extremidades cortas
+- Ojos con blancos
+- Detalles innecesarios o realistas
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+REGLAS DE GENERACIÓN:
+
+- Cada línea del guion corresponde a UNA escena visual
+- El estilo NO debe reinterpretarse ni variar entre escenas
+- El chango debe aparecer cuerpo completo salvo que se indique lo contrario
+- Fondo blanco por defecto
+- Imágenes horizontales por defecto
+- No agregar texto adicional salvo que la escena lo especifique
+- Priorizar claridad conceptual sobre detalle visual
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+FORMATO DE SALIDA ESPERADO:
+
+Cuando se solicite un guion de N líneas, responde exclusivamente con:
+
+N.Línea: “Texto narrativo”
+Visual:
+[ESCENA en formato estructurado]
+
+Donde el bloque ESCENA debe describir únicamente:
+- Acción principal
+- Elementos secundarios
+- Intención visual
+
+NO repetir ni reinterpretar la definición de estilo.
+NO añadir explicaciones fuera del guion.
+NO comentar decisiones de diseño.
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+IMPORTANTE:
+
+A partir de este prompt base, asume que el Estilo Econochangos v1
+está activo y debe respetarse en todas las respuestas subsecuentes
+relacionadas con este proyecto.

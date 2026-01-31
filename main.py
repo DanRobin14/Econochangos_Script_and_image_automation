@@ -3,3 +3,35 @@
 Main
 
 """"
+
+
+
+'Leer ruta'
+
+
+'Crear folder de imagenes'
+
+
+'Leer los txts context'
+
+'Llamar al master para definir el contexto del proyecto'
+
+'Definir el título con variable de usuario'
+
+'Definir el número de lineas con variable de usuario'
+
+'Llamar al script generador para generar el guión de N lineas'
+
+'Tomar el output y guardarlo como txt'
+
+'Crear diccionario usando el output para definir pares (#linea,texto)'
+
+'Hacer loop for each (#linea,texto)'
+
+        'Función generar imagen(#linea,texto,context_image_generator)'
+
+        'Guardar imagenen en la carpeta de imagenes con el nombre en formato 001'
+
+'Pedir miniatura usando el context_thumbnail'
+
+'Guardar Thumbnail'

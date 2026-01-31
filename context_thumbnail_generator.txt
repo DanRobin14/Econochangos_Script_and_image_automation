@@ -1,0 +1,1 @@
+“Genera un guion de N líneas para Econochangos con el título: "
