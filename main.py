@@ -72,15 +72,44 @@ print("Título recibido:", titulo)
 print("Número de líneas:", lineas)
 
 
-'Llamar al script generador para generar el guión de N lineas'
+'Llamar al script generador para generar el guión de N lineas (Temporal)'
 
 
+response_str = """1.Línea: “Japón detonó una crisis de 20 trillones de dólares… y casi nadie lo vio venir.”
+Visual:
 
+Acción principal: Chango naranja señala una esfera gigante etiquetada “Japón” que vibra.
+
+Elementos secundarios: Número enorme “20T” flotando como alarma.
+
+Intención visual: Impacto inmediato y escala descomunal.
+
+2.Línea: “Y lo peor: el golpe puede pegarle a tu portafolio en los próximos 90 días.”
+Visual:
+
+Acción principal: Chango mira un calendario con “90 días” marcado.
+
+Elementos secundarios: Portafolio (carpeta) con señal de alerta.
+
+Intención visual: Urgencia temporal clara.
+
+3.Línea: “Porque Japón cruzó una línea que no se cruzaba desde hace 30 años.”
+Visual:
+
+Acción principal: Chango cruza una línea en el piso con letrero “30 años”.
+
+Elementos secundarios: Huellas atrás, flecha hacia adelante.
+
+Intención visual: Punto de no retorno.
+"""
 
 
 'Tomar el output y guardarlo como txt'
+script_dir = ruta / "outputs"
+script_file = script_dir / "script.txt"
+script_file.write_text(response_str, encoding="utf-8-sig")
 
-
+ 
 
 
 
@@ -91,6 +120,8 @@ print("Número de líneas:", lineas)
 'Función generar imagen(#linea,texto,context_image_generator)'
 
 'Guardar imagenen en la carpeta de imagenes con el nombre en formato 001'
+
+
 
 
 
