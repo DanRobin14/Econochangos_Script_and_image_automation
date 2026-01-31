@@ -20,27 +20,42 @@ print(context_dir)
 'Leer los txts context'
 
 from leer_context_files import leer_context_files
-
 try:
     ctx = leer_context_files(ruta, carpeta_contexto="context", strict=True)
     print("✅ Context files cargados correctamente: master, script, image, thumbnail.")
 except FileNotFoundError as e:
     print("❌ Error cargando context files:")
     print(e)
-    raise  # opcional: para cortar ejecución
-
-# Variables listas para manipular
+    raise
 context_master = ctx.context_master
 context_script_generator = ctx.context_script_generator
 context_image_generator = ctx.context_image_generator
 context_thumbnail_generator = ctx.context_thumbnail_generator
 
 
-
-
 'Llamar al master para definir el contexto del proyecto'
 
 'Definir el título con variable de usuario'
+
+# Definir el título con variable de usuario
+
+import argparse
+
+parser = argparse.ArgumentParser(description="Generación de guion e imágenes - Econochangos")
+parser.add_argument("--titulo", type=str, required=False, help="Título del guion")
+
+args = parser.parse_args()
+
+titulo = (args.titulo or "").strip()
+if not titulo:
+    titulo = input("Ingresa el título: ").strip()
+
+if not titulo:
+    raise ValueError("El título no puede estar vacío.")
+
+print("Título recibido:", titulo)
+
+
 
 'Definir el número de lineas con variable de usuario'
 
