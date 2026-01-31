@@ -35,29 +35,41 @@ context_thumbnail_generator = ctx.context_thumbnail_generator
 
 'Llamar al master para definir el contexto del proyecto'
 
-'Definir el título con variable de usuario'
 
-# Definir el título con variable de usuario
 
+
+'Definir el título y numero de lineas con variable de usuario'
 import argparse
-
+def entero_positivo(value: str) -> int:
+    try:
+        n = int(value)
+    except ValueError:
+        raise argparse.ArgumentTypeError("Debe ser un número entero (ej: 75).")
+    if n <= 0:
+        raise argparse.ArgumentTypeError("Debe ser un entero mayor a cero.")
+    return n
 parser = argparse.ArgumentParser(description="Generación de guion e imágenes - Econochangos")
 parser.add_argument("--titulo", type=str, required=False, help="Título del guion")
-
+parser.add_argument("--lineas", type=entero_positivo, required=False, help="Número de líneas del guion (entero > 0)")
 args = parser.parse_args()
 
 titulo = (args.titulo or "").strip()
 if not titulo:
     titulo = input("Ingresa el título: ").strip()
-
 if not titulo:
     raise ValueError("El título no puede estar vacío.")
 
+lineas = args.lineas
+while lineas is None:
+    raw = input("Ingresa el número de líneas (entero > 0): ").strip()
+    try:
+        lineas = entero_positivo(raw)
+    except argparse.ArgumentTypeError as e:
+        print(f"Valor inválido: {e}")
+        lineas = None
 print("Título recibido:", titulo)
+print("Número de líneas:", lineas)
 
-
-
-'Definir el número de lineas con variable de usuario'
 
 'Llamar al script generador para generar el guión de N lineas'
 
