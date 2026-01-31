@@ -1,0 +1,1 @@
+'Subrutina para definir directorio desde donde corre el programa'
