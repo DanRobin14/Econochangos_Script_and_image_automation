@@ -1,7 +1,14 @@
 
 
-'Main'
+'Main (Pendientes)'
 
+'Llamar al master para definir el contexto del proyecto'
+'Llamar al script generador para generar el guión de N lineas (Temporal)'
+'Hacer loop for each (#linea,texto)'
+'Función generar imagen(#linea,texto,context_image_generator)'
+'Guardar imagenen en la carpeta de imagenes con el nombre en formato 001'
+'Pedir miniatura usando el context_thumbnail'
+'Guardar Thumbnail'
 
 
 'Leer ruta (Merged)'
@@ -408,28 +415,25 @@ Fondo blanco. Chango naranja reflexivo con banana intacta.
 """
 
 
-'Tomar el output y guardarlo como txt'
+'Tomar el output y guardarlo como txt (Merged)'
 script_dir = ruta / "outputs"
 script_file = script_dir / "script.txt"
 script_file.write_text(response_str, encoding="utf-8-sig")
 
  
 
-'Crear diccionario usando el output para definir pares (#linea,texto)'
+'Crear diccionario usando el output para definir pares (#linea,texto) (Merged)'
 from segmentar_guion import segmentar_guion
 chunks = segmentar_guion(response_str)
+
+
+'Hacer loop for each (#linea,texto)'
+'Función generar imagen(#linea,texto,context_image_generator)'
+'Guardar imagenen en la carpeta de imagenes con el nombre en formato 001'
 
 for n in sorted(chunks):
     print("----", n, "----")
     print(chunks[n])
-
-
-
-'Hacer loop for each (#linea,texto)'
-
-'Función generar imagen(#linea,texto,context_image_generator)'
-
-'Guardar imagenen en la carpeta de imagenes con el nombre en formato 001'
 
 
 
