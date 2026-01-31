@@ -1,12 +1,17 @@
-""" 
 
-Main
 
-""""
+'Main'
 
 
 
 'Leer ruta'
+
+from leer_ruta import get_caller_dir
+
+ruta = get_caller_dir(__file__)
+
+print(ruta)
+
 
 
 'Crear folder de imagenes'
@@ -28,9 +33,9 @@ Main
 
 'Hacer loop for each (#linea,texto)'
 
-        'Función generar imagen(#linea,texto,context_image_generator)'
+'Función generar imagen(#linea,texto,context_image_generator)'
 
-        'Guardar imagenen en la carpeta de imagenes con el nombre en formato 001'
+'Guardar imagenen en la carpeta de imagenes con el nombre en formato 001'
 
 'Pedir miniatura usando el context_thumbnail'
 
