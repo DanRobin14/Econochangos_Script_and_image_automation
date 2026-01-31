@@ -9,10 +9,12 @@ from leer_ruta import get_caller_dir
 ruta = get_caller_dir(__file__)
 print(ruta)
 
-'Crear folder de outputs'
+'Crear folder de outputs y de context'
 from validar_carpeta import asegurar_carpeta_en_ruta
 outputs_dir = asegurar_carpeta_en_ruta("outputs", ruta)
+context_dir = asegurar_carpeta_en_ruta("context", ruta)
 print(outputs_dir)
+print(context_dir)
 
 
 
