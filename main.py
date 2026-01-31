@@ -14,7 +14,15 @@ print(ruta)
 
 
 
-'Crear folder de imagenes'
+'Crear folder de outputs'
+
+from validar_carpeta import asegurar_carpeta_en_ruta
+
+outputs_dir = asegurar_carpeta_en_ruta("outputs", ruta)
+
+print(outputs_dir)
+
+
 
 
 'Leer los txts context'
