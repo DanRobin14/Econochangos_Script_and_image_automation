@@ -5,21 +5,13 @@
 
 
 'Leer ruta'
-
 from leer_ruta import get_caller_dir
-
 ruta = get_caller_dir(__file__)
-
 print(ruta)
 
-
-
 'Crear folder de outputs'
-
 from validar_carpeta import asegurar_carpeta_en_ruta
-
 outputs_dir = asegurar_carpeta_en_ruta("outputs", ruta)
-
 print(outputs_dir)
 
 
