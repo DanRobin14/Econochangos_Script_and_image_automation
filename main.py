@@ -11,6 +11,25 @@
 'Guardar Thumbnail'
 
 
+
+' Definir cliente'
+
+from dotenv import load_dotenv
+load_dotenv()
+
+from openai_client import get_client
+import settings
+
+# ... tu código actual: leer ruta, crear carpetas, leer contextos, args, etc.
+
+client = get_client()
+print("✅ OpenAI client inicializado.")
+print("Model script:", settings.MODEL_SCRIPT)
+print("Model image :", settings.MODEL_IMAGE)
+
+
+
+
 'Leer ruta (Merged)'
 from leer_ruta import get_caller_dir
 ruta = get_caller_dir(__file__)
