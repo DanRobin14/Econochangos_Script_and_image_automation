@@ -17,13 +17,15 @@ IMAGE_SIZE_THUMB: str = "1536x1024"
 
 # Estructura de carpetas (relativa a la ruta base del proyecto)
 OUTPUTS_FOLDER_NAME: str = "outputs"
+OUTPUT_IMAGES_FOLDER_NAME: str = "images"
 CONTEXT_FOLDER_NAME: str = "context"
 
 # IMAGES_FOLDER_NAME: str = "images"  # dentro de outputs
 
 # Referencias visuales (Feature 4; por ahora solo definido)
 REFS_DIR: Path = Path("context")
-REF_IMAGES: list[str] = [
-    str(REFS_DIR / "Estilo(1).jpeg"),
-    str(REFS_DIR / "Estilo(2).jpeg"),
+
+REF_IMAGES = [
+    "context/refs/Estilo(1).jpeg"
 ]
+

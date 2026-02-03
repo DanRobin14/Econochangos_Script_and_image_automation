@@ -10,6 +10,8 @@
 'Pedir miniatura usando el context_thumbnail'
 'Guardar Thumbnail'
 
+import time
+t0_script = time.perf_counter()
 
 
 ' Definir cliente'
@@ -133,9 +135,48 @@ chunks = segmentar_guion(response_str)
 'Función generar imagen(#linea,texto,context_image_generator)'
 'Guardar imagenen en la carpeta de imagenes con el nombre en formato 001'
 
+from subir_referencias import subir_referencias
+from generar_imagen import generar_imagen_con_refs
+import settings
+from pathlib import Path
+
+# Subir referencias visuales (una sola vez)
+ref_ids = subir_referencias(
+    client,
+    base_dir=ruta,                 # tu root del proyecto (Path)
+    ref_paths=settings.REF_IMAGES, # rutas relativas definidas en settings.py
+)
+print("✅ Referencias subidas:", ref_ids)
+
+#images_dir = Path(outputs_dir) / settings.OUTPUTS_FOLDER_NAME
+
+images_dir = Path(outputs_dir) / settings.OUTPUT_IMAGES_FOLDER_NAME
+images_dir.mkdir(parents=True, exist_ok=True)
+
+
 for n in sorted(chunks):
-    print("----", n, "----")
-    print(chunks[n])
+    out_path = images_dir / f"{n:03d}.png"
+
+    if out_path.exists():
+        print(f"⏭️  Ya existe, skip: {out_path.name}")
+        continue
+
+    chunk_texto = chunks[n]  # incluye Texto + Visual
+
+    generar_imagen_con_refs(
+        client,
+        model=settings.MODEL_SCRIPT,  # usa el modelo de texto que invoca tools
+        context_image_generator=context_image_generator,
+        chunk_texto=chunk_texto,
+        ref_file_ids=ref_ids,
+        out_path=out_path,
+        size=settings.IMAGE_SIZE_SCENE,
+    )
+
+    print(f"✅ Imagen generada: {out_path.name}")
+
+
+
 
 
 
@@ -144,3 +185,7 @@ for n in sorted(chunks):
 'Pedir miniatura usando el context_thumbnail'
 
 'Guardar Thumbnail'
+
+
+t1_script = time.perf_counter()
+print(f"\n⏱️ Tiempo total del script: {t1_script - t0_script:.2f} s")

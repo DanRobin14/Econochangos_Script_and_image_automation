@@ -1,17 +1,17 @@
-﻿1.Línea: "Hoy te explico la burbuja del oro… usando bananas."
+﻿4.Línea: "Cuando hay pocas bananas y muchos compradores, el precio sube."
 Visual:
-Acción principal: Chango corpulento sostiene una banana en una mano y un lingote dorado en la otra, comparándolos.
-Elementos secundarios: Una mesa simple; dos pilas pequeñas, una de bananas y otra de lingotes.
-Intención visual: Introducir la analogía entre oro y bananas.
+Acción principal: Chango observa cómo otra mano ofrece varias monedas por una banana.
+Elementos secundarios: Unas pocas monedas doradas minimalistas.
+Intención visual: Mostrar relación demanda-precio.
 
-2.Línea: "Imagina que las bananas son como el oro: todos las quieren."
+5.Línea: "Si aparece más oferta, el precio se enfría."
 Visual:
-Acción principal: Chango muestra una banana hacia el público con gesto de atracción.
-Elementos secundarios: Varias manos de otros changos extendiéndose desde los bordes.
-Intención visual: Representar demanda generalizada.
+Acción principal: Chango ve llegar otro chango con un racimo grande de bananas.
+Elementos secundarios: Dos racimos adicionales apoyados en el suelo.
+Intención visual: Aumentar oferta visualmente.
 
-3.Línea: "La clave: valor porque son deseadas y limitadas."
+6.Línea: "Al principio, el movimiento es razonable."
 Visual:
-Acción principal: Chango protege con brazos abiertos una pequeña pila de bananas.
-Elementos secundarios: Espacio vacío alrededor para enfatizar escasez.
-Intención visual: Destacar escasez y deseo.
+Acción principal: Chango intercambia calmado una banana por unas pocas monedas.
+Elementos secundarios: Gestos tranquilos, postura estable.
+Intención visual: Mercado equilibrado.
