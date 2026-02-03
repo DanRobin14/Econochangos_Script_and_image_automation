@@ -1,17 +1,23 @@
-﻿4.Línea: "Cuando hay pocas bananas y muchos compradores, el precio sube."
+﻿7.Línea: "Pero alguien nota que suben rápido…"
 Visual:
-Acción principal: Chango observa cómo otra mano ofrece varias monedas por una banana.
-Elementos secundarios: Unas pocas monedas doradas minimalistas.
-Intención visual: Mostrar relación demanda-precio.
+Acción principal: Chango señala una pila de monedas que creció respecto a antes.
+Elementos secundarios: Dos marcas en el suelo indicando nivel anterior y actual (sin texto).
+Intención visual: Mostrar aceleración de precios.
 
-5.Línea: "Si aparece más oferta, el precio se enfría."
+8.Línea: "Más gente entra solo porque sube."
 Visual:
-Acción principal: Chango ve llegar otro chango con un racimo grande de bananas.
-Elementos secundarios: Dos racimos adicionales apoyados en el suelo.
-Intención visual: Aumentar oferta visualmente.
+Acción principal: Varios changos se agrupan mirando las bananas con entusiasmo.
+Elementos secundarios: Pocas bananas al centro como foco.
+Intención visual: Efecto manada.
 
-6.Línea: "Al principio, el movimiento es razonable."
+9.Línea: "Empieza la narrativa: 'no puede bajar'."
 Visual:
-Acción principal: Chango intercambia calmado una banana por unas pocas monedas.
-Elementos secundarios: Gestos tranquilos, postura estable.
-Intención visual: Mercado equilibrado.
+Acción principal: Chango con postura confiada abraza un racimo como si fuera tesoro.
+Elementos secundarios: Otros changos imitan el gesto.
+Intención visual: Optimismo exagerado.
+
+10.Línea: "Se compra por miedo a quedarse fuera."
+Visual:
+Acción principal: Chango corre hacia un racimo, mano extendida para agarrarlo.
+Elementos secundarios: Dos changos detrás tratando de alcanzarlo.
+Intención visual: FOMO.

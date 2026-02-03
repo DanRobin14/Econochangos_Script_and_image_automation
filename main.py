@@ -1,20 +1,20 @@
 
 
-'Main (Pendientes)'
+# 'Main (Pendientes)'
 
-'Llamar al master para definir el contexto del proyecto'
-'Llamar al script generador para generar el guión de N lineas (Temporal)'
-'Hacer loop for each (#linea,texto)'
-'Función generar imagen(#linea,texto,context_image_generator)'
-'Guardar imagenen en la carpeta de imagenes con el nombre en formato 001'
-'Pedir miniatura usando el context_thumbnail'
-'Guardar Thumbnail'
+# 'Llamar al master para definir el contexto del proyecto'
+# 'Llamar al script generador para generar el guión de N lineas (Temporal)'
+# 'Hacer loop for each (#linea,texto)'
+# 'Función generar imagen(#linea,texto,context_image_generator)'
+# 'Guardar imagenen en la carpeta de imagenes con el nombre en formato 001'
+# 'Pedir miniatura usando el context_thumbnail'
+# 'Guardar Thumbnail'
 
 import time
 t0_script = time.perf_counter()
 
 
-' Definir cliente'
+# ' Definir cliente'
 
 from dotenv import load_dotenv
 load_dotenv()
@@ -29,12 +29,12 @@ print("Model image :", settings.MODEL_IMAGE)
 
 
 
-'Leer ruta (Merged)'
+# 'Leer ruta (Merged)'
 from leer_ruta import get_caller_dir
 ruta = get_caller_dir(__file__)
 print(ruta)
 
-'Crear folder de outputs y de context (Merged)'
+# 'Crear folder de outputs y de context (Merged)'
 from validar_carpeta import asegurar_carpeta_en_ruta
 outputs_dir = asegurar_carpeta_en_ruta("outputs", ruta)
 context_dir = asegurar_carpeta_en_ruta("context", ruta)
@@ -42,7 +42,7 @@ print(outputs_dir)
 print(context_dir)
 
 
-'Leer los txts context (Merged)'
+# 'Leer los txts context (Merged)'
 from leer_context_files import leer_context_files
 try:
     ctx = leer_context_files(ruta, carpeta_contexto="context", strict=True)
@@ -58,12 +58,12 @@ context_thumbnail_generator = ctx.context_thumbnail_generator
 print(context_script_generator)
 
 
-'Llamar al master para definir el contexto del proyecto'
+# 'Llamar al master para definir el contexto del proyecto'
 
 
 
 
-'Definir el título y numero de lineas con variable de usuario (Merged)'
+# 'Definir el título y numero de lineas con variable de usuario (Merged)'
 import argparse
 def entero_positivo(value: str) -> int:
     try:
@@ -96,7 +96,7 @@ print("Título recibido:", titulo)
 print("Número de líneas:", lineas)
 
 
-'Llamar al script generador para generar el guión de N lineas (Temporal)'
+# 'Llamar al script generador para generar el guión de N lineas (Temporal)'
 from generar_guion import generar_guion
 """
 response_str = generar_guion(
@@ -112,7 +112,7 @@ response_str = generar_guion(
 
 
 
-'Tomar el output y guardarlo como txt (Merged)'
+# 'Tomar el output y guardarlo como txt (Merged)'
 script_dir = ruta / "outputs"
 script_file = script_dir / "script.txt"
 
@@ -126,27 +126,38 @@ response_str = script_file.read_text(encoding="utf-8-sig")  # o "utf-8" si no us
 
  
 
-'Crear diccionario usando el output para definir pares (#linea,texto) (Merged)'
+# 'Crear diccionario usando el output para definir pares (#linea,texto) (Merged)'
 from segmentar_guion import segmentar_guion
 chunks = segmentar_guion(response_str)
 
 
-'Hacer loop for each (#linea,texto)'
-'Función generar imagen(#linea,texto,context_image_generator)'
-'Guardar imagenen en la carpeta de imagenes con el nombre en formato 001'
+# 'Hacer loop for each (#linea,texto)'
+# 'Función generar imagen(#linea,texto,context_image_generator)'
+# 'Guardar imagenen en la carpeta de imagenes con el nombre en formato 001'
 
-from subir_referencias import subir_referencias
+#from subir_referencias import subir_referencias
 from generar_imagen import generar_imagen_con_refs
 import settings
 from pathlib import Path
 
 # Subir referencias visuales (una sola vez)
-ref_ids = subir_referencias(
+
+from cache_refs import get_or_upload_reference_ids
+
+refs_dir = ruta / "context" / "refs"
+cache_path = ruta / "outputs" / "ref_cache.json"
+
+ref_ids = get_or_upload_reference_ids(
     client,
-    base_dir=ruta,                 # tu root del proyecto (Path)
-    ref_paths=settings.REF_IMAGES, # rutas relativas definidas en settings.py
+    refs_dir=refs_dir,
+    cache_path=cache_path,
+    pattern="Estilo(*).jpeg",
 )
-print("✅ Referencias subidas:", ref_ids)
+print(f"✅ Referencias listas: {len(ref_ids)}")
+
+
+
+
 
 #images_dir = Path(outputs_dir) / settings.OUTPUTS_FOLDER_NAME
 
@@ -182,9 +193,9 @@ for n in sorted(chunks):
 
 
 
-'Pedir miniatura usando el context_thumbnail'
+# 'Pedir miniatura usando el context_thumbnail'
 
-'Guardar Thumbnail'
+# 'Guardar Thumbnail'
 
 
 t1_script = time.perf_counter()
