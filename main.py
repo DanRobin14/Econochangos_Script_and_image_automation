@@ -194,6 +194,7 @@ for n in sorted(chunks):
                 ref_file_ids=ref_ids,
                 out_path=out_path,
                 size=settings.IMAGE_SIZE_SCENE,
+                input_fidelity=settings.IMAGE_INPUT_FIDELITY,
             )
 
             t1_img = time.perf_counter()

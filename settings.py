@@ -12,8 +12,11 @@ MODEL_SCRIPT: str = "gpt-5"
 MODEL_IMAGE: str = "gpt-image-1"
 
 # Tamaños sugeridos (puedes cambiarlos luego)
-IMAGE_SIZE_SCENE: str = "1536x1024"
-IMAGE_SIZE_THUMB: str = "1536x1024"
+IMAGE_SIZE_SCENE: str = "1024x1024"
+IMAGE_SIZE_THUMB: str = "1024x1024"
+
+# Calidad de fidelidad para generación de imágenes
+IMAGE_INPUT_FIDELITY: str = "medium"
 
 # Estructura de carpetas (relativa a la ruta base del proyecto)
 OUTPUTS_FOLDER_NAME: str = "outputs"
@@ -25,7 +28,4 @@ CONTEXT_FOLDER_NAME: str = "context"
 # Referencias visuales (Feature 4; por ahora solo definido)
 REFS_DIR: Path = Path("context")
 
-REF_IMAGES = [
-    "context/refs/Estilo(1).jpeg"
-]
-
+REF_IMAGES = ["context/refs/Estilo(1).jpeg"]

@@ -38,6 +38,7 @@ def generar_imagen_con_refs(
     ref_file_ids: list[str],
     out_path: Path,
     size: str = "1536x1024",
+    input_fidelity: str = "high",
 ) -> None:
     """
     Genera una imagen PNG para un chunk usando referencias visuales (file_id).
@@ -64,7 +65,7 @@ def generar_imagen_con_refs(
         tools=[{
             "type": "image_generation",
             "action": "generate",
-            "input_fidelity": "high",
+            "input_fidelity": input_fidelity,
             "size": size,
         }],
         store=False,
