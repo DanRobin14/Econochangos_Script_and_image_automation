@@ -96,6 +96,7 @@ print("Número de líneas:", lineas)
 
 'Llamar al script generador para generar el guión de N lineas (Temporal)'
 from generar_guion import generar_guion
+"""
 response_str = generar_guion(
     client,
     model=settings.MODEL_SCRIPT,
@@ -105,14 +106,21 @@ response_str = generar_guion(
     lineas=lineas,
     store=settings.OPENAI_STORE,
 )
-
+"""
 
 
 
 'Tomar el output y guardarlo como txt (Merged)'
 script_dir = ruta / "outputs"
 script_file = script_dir / "script.txt"
-script_file.write_text(response_str, encoding="utf-8-sig")
+
+from pathlib import Path
+
+script_dir = ruta / "outputs"
+script_file = script_dir / "script.txt"
+
+response_str = script_file.read_text(encoding="utf-8-sig")  # o "utf-8" si no usas BOM
+# script_file.write_text(response_str, encoding="utf-8-sig")
 
  
 
