@@ -151,7 +151,7 @@ ref_ids = get_or_upload_reference_ids(
     client,
     refs_dir=refs_dir,
     cache_path=cache_path,
-    pattern="Estilo(*).jpeg",
+    pattern="Estilo(*).*",
 )
 print(f"✅ Referencias listas: {len(ref_ids)}")
 
@@ -185,6 +185,8 @@ for n in sorted(chunks):
     )
 
     print(f"✅ Imagen generada: {out_path.name}")
+    t1_script = time.perf_counter()
+    print(f"✅ {out_path.name} generado en {t1_script - t0_script:.2f} s")
 
 
 

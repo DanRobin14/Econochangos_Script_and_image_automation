@@ -64,7 +64,7 @@ def get_or_upload_reference_ids(
     *,
     refs_dir: Path,
     cache_path: Path,
-    pattern: str = "Estilo(*).jpeg",
+    pattern: str = "Estilo(*).*",
     purpose: str = "vision",
 ) -> List[str]:
     """
