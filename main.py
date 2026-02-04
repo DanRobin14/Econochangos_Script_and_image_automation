@@ -186,7 +186,7 @@ for n in sorted(chunks):
     for attempt in range(1, max_retries + 1):
         t0_img = time.perf_counter()
         try:
-            generar_imagen_con_refs(
+            usage = generar_imagen_con_refs(
                 client,
                 model=settings.MODEL_SCRIPT,  # usa el modelo de texto que invoca tools
                 context_image_generator=context_image_generator,
@@ -195,12 +195,15 @@ for n in sorted(chunks):
                 out_path=out_path,
                 size=settings.IMAGE_SIZE_SCENE,
                 input_fidelity=settings.IMAGE_INPUT_FIDELITY,
+                quality=settings.IMAGE_OUTPUT_QUALITY,
             )
 
             t1_img = time.perf_counter()
             t1_script = time.perf_counter()
             print(f"✅ {out_path.name} generado en {t1_img - t0_img:.2f} s "
                   f"(total script: {t1_script - t0_script:.2f} s)")
+            if usage:
+                print(f"📊 Tokens {out_path.name}: {usage}")
             ok = True
             break
 

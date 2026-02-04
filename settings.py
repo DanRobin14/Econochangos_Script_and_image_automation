@@ -18,6 +18,9 @@ IMAGE_SIZE_THUMB: str = "1536x1024"
 # Calidad de fidelidad para generación de imágenes
 IMAGE_INPUT_FIDELITY: str = "low"
 
+# Calidad de salida para generación de imágenes
+IMAGE_OUTPUT_QUALITY: str = "low"
+
 # Estructura de carpetas (relativa a la ruta base del proyecto)
 OUTPUTS_FOLDER_NAME: str = "outputs"
 OUTPUT_IMAGES_FOLDER_NAME: str = "images"
@@ -36,4 +39,3 @@ REF_IMAGES = [
     for p in sorted(REFS_DIR.glob("*"))
     if p.suffix.lower() in (".jpg", ".jpeg", ".png", ".webp")
 ]
-
