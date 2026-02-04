@@ -5,7 +5,7 @@ from __future__ import annotations
 
 import base64
 from pathlib import Path
-from typing import Any
+from typing import Any, Dict, Optional
 from openai import OpenAI
 
 
@@ -29,6 +29,23 @@ def _extraer_b64_imagen(resp: Any) -> str:
     raise RuntimeError("No se pudo extraer la imagen (base64) de la respuesta.")
 
 
+def _extraer_usage_tokens(resp: Any) -> Optional[Dict[str, int]]:
+    """
+    Extrae el desglose de tokens si está disponible en la respuesta.
+    """
+    usage = getattr(resp, "usage", None)
+    if usage is None:
+        return None
+
+    tokens: Dict[str, int] = {}
+    for key in ("input_tokens", "output_tokens", "total_tokens"):
+        value = getattr(usage, key, None)
+        if isinstance(value, int):
+            tokens[key] = value
+
+    return tokens or None
+
+
 def generar_imagen_con_refs(
     client: OpenAI,
     *,
@@ -39,7 +56,7 @@ def generar_imagen_con_refs(
     out_path: Path,
     size: str = "1536x1024",
     input_fidelity: str = "high",
-) -> None:
+) -> Optional[Dict[str, int]]:
     """
     Genera una imagen PNG para un chunk usando referencias visuales (file_id).
     """
@@ -76,3 +93,5 @@ def generar_imagen_con_refs(
 
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_bytes(img_bytes)
+
+    return _extraer_usage_tokens(resp)
