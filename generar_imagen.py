@@ -29,21 +29,49 @@ def _extraer_b64_imagen(resp: Any) -> str:
     raise RuntimeError("No se pudo extraer la imagen (base64) de la respuesta.")
 
 
-def _extraer_usage_tokens(resp: Any) -> Optional[Dict[str, int]]:
+def _extraer_usage_tokens(usage: Any) -> Optional[Dict[str, int]]:
     """
-    Extrae el desglose de tokens si está disponible en la respuesta.
+    Extrae campos de tokens desde un objeto o dict de usage.
     """
-    usage = getattr(resp, "usage", None)
     if usage is None:
         return None
 
+    def obtener_valor(clave: str) -> Optional[int]:
+        if isinstance(usage, dict):
+            valor = usage.get(clave)
+        else:
+            valor = getattr(usage, clave, None)
+        return valor if isinstance(valor, int) else None
+
     tokens: Dict[str, int] = {}
     for key in ("input_tokens", "output_tokens", "total_tokens"):
-        value = getattr(usage, key, None)
-        if isinstance(value, int):
+        value = obtener_valor(key)
+        if value is not None:
             tokens[key] = value
 
     return tokens or None
+
+
+def _extraer_usage_desglose(resp: Any) -> Optional[Dict[str, Dict[str, int]]]:
+    """
+    Extrae el desglose de tokens tanto del response principal como del tool de imagen.
+    """
+    desglose: Dict[str, Dict[str, int]] = {}
+
+    resp_usage = _extraer_usage_tokens(getattr(resp, "usage", None))
+    if resp_usage:
+        desglose["response"] = resp_usage
+
+    output = getattr(resp, "output", None)
+    if isinstance(output, list):
+        for item in output:
+            if getattr(item, "type", None) == "image_generation_call":
+                item_usage = _extraer_usage_tokens(getattr(item, "usage", None))
+                if item_usage:
+                    desglose["image_generation"] = item_usage
+                break
+
+    return desglose or None
 
 
 def generar_imagen_con_refs(
@@ -56,7 +84,7 @@ def generar_imagen_con_refs(
     out_path: Path,
     size: str = "1536x1024",
     input_fidelity: str = "high",
-) -> Optional[Dict[str, int]]:
+) -> Optional[Dict[str, Dict[str, int]]]:
     """
     Genera una imagen PNG para un chunk usando referencias visuales (file_id).
     """
@@ -94,4 +122,4 @@ def generar_imagen_con_refs(
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_bytes(img_bytes)
 
-    return _extraer_usage_tokens(resp)
+    return _extraer_usage_desglose(resp)
