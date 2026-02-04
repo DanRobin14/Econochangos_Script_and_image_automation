@@ -195,6 +195,7 @@ for n in sorted(chunks):
                 out_path=out_path,
                 size=settings.IMAGE_SIZE_SCENE,
                 input_fidelity=settings.IMAGE_INPUT_FIDELITY,
+                quality=settings.IMAGE_OUTPUT_QUALITY,
             )
 
             t1_img = time.perf_counter()

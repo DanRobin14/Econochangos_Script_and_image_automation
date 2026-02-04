@@ -84,6 +84,7 @@ def generar_imagen_con_refs(
     out_path: Path,
     size: str = "1536x1024",
     input_fidelity: str = "high",
+    quality: str = "low",
 ) -> Optional[Dict[str, Dict[str, int]]]:
     """
     Genera una imagen PNG para un chunk usando referencias visuales (file_id).
@@ -112,6 +113,7 @@ def generar_imagen_con_refs(
             "action": "generate",
             "input_fidelity": input_fidelity,
             "size": size,
+            "quality": quality,
         }],
         store=False,
     )
