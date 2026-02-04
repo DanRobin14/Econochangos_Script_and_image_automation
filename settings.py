@@ -8,18 +8,18 @@ from pathlib import Path
 OPENAI_STORE: bool = False  # no guardar por default
 
 # Modelos (ajústalos luego si quieres)
-MODEL_SCRIPT: str = "gpt-5"
+MODEL_SCRIPT: str = "gpt-5-mini"
 MODEL_IMAGE: str = "gpt-image-1"
 
 # Tamaños sugeridos (puedes cambiarlos luego)
-IMAGE_SIZE_SCENE: str = "1024x1024"
+IMAGE_SIZE_SCENE: str = "1536x1024"
 IMAGE_SIZE_THUMB: str = "1536x1024"
 
 # Calidad de fidelidad para generación de imágenes
 IMAGE_INPUT_FIDELITY: str = "low"
 
 # Calidad de salida para generación de imágenes
-IMAGE_OUTPUT_QUALITY: str = "low"
+IMAGE_OUTPUT_QUALITY: str = "medium"
 
 # Estructura de carpetas (relativa a la ruta base del proyecto)
 OUTPUTS_FOLDER_NAME: str = "outputs"

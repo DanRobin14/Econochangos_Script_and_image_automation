@@ -1,0 +1,95 @@
+﻿60.Línea: "Y diversifica entre activos."
+Visual:
+Acción principal: Chango reparte monedas entre banana, lingote y un tercer objeto neutral (canasta vacía).
+Elementos secundarios: Arreglo equilibrado.
+Intención visual: Portafolio balanceado.
+
+61.Línea: "El oro no es malo; la euforia sí."
+Visual:
+Acción principal: Chango sostiene el lingote con respeto, no con ansiedad.
+Elementos secundarios: Entorno sereno.
+Intención visual: Uso prudente.
+
+62.Línea: "Las bananas se pudren; el oro no. Pero las burbujas comparten dinámica."
+Visual:
+Acción principal: Chango compara una banana algo oscurecida con un lingote intacto.
+Elementos secundarios: Reloj simple marcando paso del tiempo.
+Intención visual: Diferencias de naturaleza, misma psicología.
+
+63.Línea: "Todo activo puede sobrevalorarse si la historia domina."
+Visual:
+Acción principal: Chango pone una corona simple sobre banana y lingote.
+Elementos secundarios: Mira reflexivo.
+Intención visual: Narrativas coronan precios.
+
+64.Línea: "Tus decisiones importan más que el activo."
+Visual:
+Acción principal: Chango señala su cabeza y luego los objetos.
+Elementos secundarios: Postura segura.
+Intención visual: Responsabilidad personal.
+
+65.Línea: "Evita comprar por miedo o codicia."
+Visual:
+Acción principal: Chango deja caer una moneda cuando siente tirones desde dos lados (dos manos abstractas).
+Elementos secundarios: Recupera compostura.
+Intención visual: Control emocional.
+
+66.Línea: "Pregunta: ¿quién me comprará y por qué?"
+Visual:
+Acción principal: Chango mira hacia el público con una banana en mano, pensativo.
+Elementos secundarios: Espacio abierto enfrente.
+Intención visual: Plan de salida.
+
+67.Línea: "Y si la respuesta es 'no lo sé', reduce tamaño."
+Visual:
+Acción principal: Chango divide su pila de bananas en dos, guardando una parte y vendiendo otra.
+Elementos secundarios: Monedas recibidas con calma.
+Intención visual: Gestión prudente.
+
+68.Línea: "Recapitulemos la burbuja con bananas."
+Visual:
+Acción principal: Chango coloca en fila: pocas bananas, muchas manos, apalancamiento, pánico, caída.
+Elementos secundarios: Cinco mini viñetas hechas con objetos.
+Intención visual: Síntesis del ciclo.
+
+69.Línea: "Demanda fuerte y escasez empujan precios."
+Visual:
+Acción principal: Chango acerca manos a pocas bananas al centro.
+Elementos secundarios: Monedas acercándose.
+Intención visual: Fase inicial.
+
+70.Línea: "La historia de riqueza fácil atrae masas."
+Visual:
+Acción principal: Grupo grande de changos moviéndose hacia el centro.
+Elementos secundarios: Cajas apiladas tentadoras.
+Intención visual: Manía.
+
+71.Línea: "El crédito pone gasolina al fuego."
+Visual:
+Acción principal: Chango conecta una manguera desde monedas hacia cajas de bananas.
+Elementos secundarios: Flujo representado por líneas.
+Intención visual: Apalancamiento alimenta precios.
+
+72.Línea: "Luego, un tropiezo rompe la confianza."
+Visual:
+Acción principal: Chango tropieza con una caja abierta y suelta bananas.
+Elementos secundarios: Otros se detienen en seco.
+Intención visual: Grieta en narrativa.
+
+73.Línea: "Las ventas forzadas aceleran la caída."
+Visual:
+Acción principal: Cajas deslizándose cuesta abajo con chango tratando de frenarlas.
+Elementos secundarios: Monedas esparcidas.
+Intención visual: Efecto cascada.
+
+74.Línea: "Al final, quedan lecciones y oportunidad de empezar mejor."
+Visual:
+Acción principal: Chango ordena un pequeño set: una banana, un lingote, unas monedas.
+Elementos secundarios: Sonrisa serena.
+Intención visual: Reconstrucción racional.
+
+75.Línea: "Si entiendes las bananas, entiendes la burbuja del oro."
+Visual:
+Acción principal: Chango choca su puño con el público mientras sostiene un lingote en la otra mano.
+Elementos secundarios: Banana apoyada a sus pies.
+Intención visual: Cierre claro y motivador.
