@@ -9,14 +9,14 @@ OPENAI_STORE: bool = False  # no guardar por default
 
 # Modelos (ajústalos luego si quieres)
 MODEL_SCRIPT: str = "gpt-5"
-MODEL_IMAGE: str = "gpt-image-1.5"
+MODEL_IMAGE: str = "gpt-image-1"
 
 # Tamaños sugeridos (puedes cambiarlos luego)
 IMAGE_SIZE_SCENE: str = "1024x1024"
-IMAGE_SIZE_THUMB: str = "1024x1024"
+IMAGE_SIZE_THUMB: str = "1536x1024"
 
 # Calidad de fidelidad para generación de imágenes
-IMAGE_INPUT_FIDELITY: str = "medium"
+IMAGE_INPUT_FIDELITY: str = "low"
 
 # Estructura de carpetas (relativa a la ruta base del proyecto)
 OUTPUTS_FOLDER_NAME: str = "outputs"
